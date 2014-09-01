@@ -1,0 +1,107 @@
+<!DOCTYPEhtml>
+<html lang="en"> 
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Marionette Contact Manager</title>
+    <link href="./dist/css/app.css" rel="stylesheet">
+    <link href="./dist/css/main.css" rel="stylesheet">
+  </head>
+  <body>
+    <div id="header-region" class="">
+      
+    </div>
+    <div id="main-region" class="">
+      
+    </div>
+    <div class="container">
+      <p>Here is static content in the web page. You'll notice that it gets
+      replaced by our app as soon as we start it.</p>
+    </div>
+    <div class="container">
+      <button class="lines-button x" type="button" role="button" aria-label="Toggle Navigation">
+        <span class="lines"></span>
+      </button>
+    </div>
+
+
+    <script type="text/template" id="list-template">
+     
+    </script>
+
+    <script type="text/template" id="climb-list-item">
+    <p>Test climb list entry <%= difficulty %></p>
+    </script>
+
+
+
+
+    <script type="text/template" id="header">
+      <div class="container">
+        <div class="navbar-header">
+        <!-- 
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button> -->
+          <button class="navbar-toggle lines-button x" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse" role="button" aria-label="Toggle Navigation">
+            <span class="lines"></span>
+          </button>
+          <a href="../" class="navbar-brand">HeelHook</a>
+        </div>
+        <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+          <ul class="nav navbar-nav">
+            <li>
+            <a href="#">things</a>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#" class="js-add" >Add Entry</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="container">
+        <div class="navbar-new-entry collapse">
+          <form role="form" class="new-entry-form">
+            <div class="row">
+              <div class="col-xs-12">
+                <input class="form-control" type="text" name="title"/>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+                <input type="radio" name="difficulty" value="10.8">10.8</input>
+                <input type="radio" name="difficulty" value="10.9">10.9</input>
+                <input type="radio" name="difficulty" value="10.10">10.10</input>
+                <input type="radio" name="difficulty" value="10.11">10.11</input>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+                <input type="radio" name="success" value="clean">Clean</input>
+                <input type="radio" name="success" value="success">Success</input>
+                <input type="radio" name="success" value="fail">Fail</input>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+                <button class="btn btn-default js-submit">Submit</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </script>
+
+    <script src="./assets/js/vendor/jquery-1.11.1.js"></script>
+    <script src="./assets/js/vendor/underscore.js"></script>
+    <script src="./assets/js/vendor/backbone.js"></script>
+    <script src="./assets/js/vendor/backbone.marionette.js"></script>
+    <script src="./assets/js/vendor/backbone.localStorage.js"></script>
+    <script src="./assets/js/vendor/bootstrap.js"></script>
+    <script src="./dist/js/app/app.min.js"></script>
+  </body>
+</html>
