@@ -3,5 +3,12 @@ HeelHook
 
 #Installation
 Run 'npm install' to download all of the dependencies
+
 Run 'gulp'
-visit 'localhost:8888/index.html'
+
+Visit 'localhost:8888'
+
+#Future Work
+Considering the following
+- [ ] Include and use Log4Javascript
+- [ ] Convert to Coffeescript
