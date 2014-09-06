@@ -1,5 +1,6 @@
 var gulp      = require('gulp'),
     connect   = require('gulp-connect'),
+    jade      = require('gulp-jade'),
     sass      = require('gulp-ruby-sass'),
     uglify    = require('gulp-uglify');
     concat    = require('gulp-concat'),
@@ -20,6 +21,9 @@ var paths = {
     },
     javascript: {
       dest:         './dist/js/app/'
+    },
+    jade: {
+      dest:         './dist/'
     }
 
 }
@@ -41,6 +45,10 @@ gulp.task('watch', ['server'], function() {
   })
   gulp.watch('assets/scss/*.scss', ['compile-sass'], 'styles');
 
+  gulp.watch('assets/js/app/modules/**/templates/*.jade', function() {
+    sequence('compile-html');
+  })
+
 });
 
 
@@ -52,6 +60,12 @@ gulp.task('dist-js', function() {
     .pipe(gulp.dest(paths.javascript.dest));
 });
 
+gulp.task('compile-html', function(e) {
+  gulp.src(['assets/js/app/modules/**/templates/*.jade'])
+  .pipe(jade())
+  .pipe(notify( { message: 'compiling html'}))
+  .pipe(gulp.dest(paths.jade.dest));
+});
 
 
 /*

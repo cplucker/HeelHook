@@ -21,16 +21,16 @@ HeelHook.module("Header", function(Header) {
 
     addEntry: function() {
       log("HeaderView.addEntry");
+      
       this.ui.navigation.collapse('hide');
-      var that = this;
       $(this.ui.navigation).on('hidden.bs.collapse', function () {
         $(this.ui.newEntryFormDisplay).collapse('show');
-
       }.bind(this) );
     },
 
     submitEntry: function(e) {
       log("HeaderView.submitEntry");
+
       e.preventDefault();
 
       var name = this.$('.new-entry-form' + ' input[name=title]').val();
