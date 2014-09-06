@@ -21,20 +21,9 @@ HeelHook.on("start", function(){
   var headerView = new HeelHook.HeaderView(); 
   HeelHook.headerRegion.show(headerView);
 
-  var collection = [];
-
-  collection[0] = new HeelHook.Entities.LocalClimb({id: "1", "difficulty":"testDifficulty"});
-  collection[1] = new HeelHook.Entities.LocalClimb({id: "2", "difficulty":"testDifficulty2"});
 
 
-  var collectionEntity = new HeelHook.Entities.LocalClimbCollection(collection);
-
-
-  console.log("collectionEntity", collectionEntity);
-
-  var climbListView = new HeelHook.ClimbList({collection: collectionEntity});
-  HeelHook.mainRegion.show(climbListView);
-
+  HeelHook.execute('climblist:module:show', HeelHook.mainRegion);
 
 });
 
