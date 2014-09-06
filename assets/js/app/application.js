@@ -1,8 +1,17 @@
 var HeelHook = new Marionette.Application();
-console.log("new app")
 
 var options = {
   env: "local"
+}
+
+// setup log4Javascript
+window.logger = log4javascript.getRootLogger();
+var browserConsoleAppender = new log4javascript.BrowserConsoleAppender();
+logger.addAppender(browserConsoleAppender);
+
+// short hand for debug logging
+function log(message) {
+  logger.debug(message);
 }
 
 HeelHook.addRegions({
@@ -10,29 +19,25 @@ HeelHook.addRegions({
   mainRegion: "#main-region"
 });
 
-
-
 HeelHook.on("start", function(){
-  console.log("HeelHook has started!");
+  log("HeelHook start")
+  
   if (Backbone.history){
     Backbone.history.start();
   }
 
+  // Create and show header view
   var headerView = new HeelHook.HeaderView(); 
   HeelHook.headerRegion.show(headerView);
 
-
-
+  // Show the main region
   HeelHook.execute('climblist:module:show', HeelHook.mainRegion);
 
 });
 
 $(document).ready(function() {
+  // Start the application
   HeelHook.start(options);
 });
 
-
-$('.lines-button').on('click', function() {
-  $(this).toggleClass('close');
-});
 

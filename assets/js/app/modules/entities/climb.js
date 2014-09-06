@@ -1,18 +1,13 @@
 HeelHook.module("Entities", function(Entities) {
 
- 
-  Entities.LocalClimb = Backbone.Model.extend({
+  Entities.Climb = Backbone.Model.extend({
     // TODO: consider setting some defaults
   });
 
-  Entities.LocalClimbCollection = Backbone.Collection.extend({
-    model: Entities.LocalClimb,
+  Entities.ClimbCollection = Backbone.Collection.extend({
+    model: Entities.Climb,
     
     localStorage: new Backbone.LocalStorage("LocalClimbCollection"), // Unique name within your app.
-
   });
-
-
-
 
 });
