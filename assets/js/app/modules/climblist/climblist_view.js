@@ -3,7 +3,7 @@ HeelHook.module("ClimbList", function(ClimbList) {
   HeelHook.ClimbItem = Marionette.ItemView.extend({
     tagName: "div",
     id: "climb-item",
-    template: "#climb-list-item",
+    template: "climblistitem",
     initialize: function() {
       log("ClimbItem.Initialize");
     }
@@ -15,7 +15,6 @@ HeelHook.module("ClimbList", function(ClimbList) {
     tagName: "div",
     id: "climb-list",
     class: "list-group",
-    template: "#list-template",
     childView: HeelHook.ClimbItem,
 
     initialize: function() {

@@ -17,76 +17,14 @@
     <script type="text/template" id="list-template">
     </script>
 
-    <script type="text/template" id="climb-list-item">
-      <a href="#" class="list-group-item">
-      <h4 class="list-group-item-heading"><strong><%= name %></strong></h4>
-      <p class="list-group-item-text">Browse our job listings</p></a>
-    </script>
-
-
-
-    <script type="text/template" id="header">
-      <div class="container">
-        <div class="navbar-header">
-        <!-- 
-          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button> -->
-
-          <button class="navbar-toggle lines-button x visible-xs" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse" role="button" aria-label="Toggle Navigation">
-            <span class="lines"></span>
-          </button>
-          <a href="../" class="navbar-brand">HeelHook</a>
-        </div>
-        <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#" class="js-add" >Add Entry</a></li>
-          </ul>
-        </nav>
-      </div>
-
-      <div class="container">
-        <div class="navbar-new-entry collapse">
-          <form role="form" class="new-entry-form">
-            <div class="row">
-              <div class="col-xs-12">
-                <input class="form-control" type="text" name="title"/>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-xs-12">
-                <input type="radio" name="difficulty" value="5.8">5.8</input>
-                <input type="radio" name="difficulty" value="5.9">5.9</input>
-                <input type="radio" name="difficulty" value="5.10">5.10</input>
-                <input type="radio" name="difficulty" value="5.11">5.11</input>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-xs-12">
-                <input type="radio" name="success" value="clean">Clean</input>
-                <input type="radio" name="success" value="success">Success</input>
-                <input type="radio" name="success" value="fail">Fail</input>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-xs-12">
-                <button class="btn btn-default js-submit">Submit</button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </script>
-
     <script src="./assets/js/vendor/jquery-1.11.1.js"></script>
     <script src="./assets/js/vendor/underscore.js"></script>
     <script src="./assets/js/vendor/backbone.js"></script>
     <script src="./assets/js/vendor/backbone.marionette.js"></script>
     <script src="./assets/js/vendor/backbone.localStorage.js"></script>
     <script src="./assets/js/vendor/bootstrap.js"></script>
+    <script src="./dist/js/templates.js"></script>
+    <script src="./assets/js/vendor/runtime.js"></script>
     <script src="./assets/js/vendor/log4javascript.js"></script>
     <script src="./dist/js/app/app.min.js"></script>
   </body>

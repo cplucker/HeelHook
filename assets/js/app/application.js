@@ -1,3 +1,10 @@
+// Customize the Renderer to use Handlebars pre-compiled templates
+Backbone.Marionette.Renderer.render = function(template, data) {
+  if (_.isFunction(template))
+    template = template();
+  return templates[template](data);
+}
+
 var HeelHook = new Marionette.Application();
 
 var options = {

@@ -1,7 +1,7 @@
 HeelHook.module("Header", function(Header) {
 
   HeelHook.HeaderView = Marionette.ItemView.extend({
-    template: "#header",
+    template: "header",
     className: "navbar navbar-inverse navbar-fixed-top",
 
     ui: {
@@ -22,6 +22,7 @@ HeelHook.module("Header", function(Header) {
     addEntry: function() {
       log("HeaderView.addEntry");
       
+      console.log("this", this)
       this.ui.navigation.collapse('hide');
       $(this.ui.navigation).on('hidden.bs.collapse', function () {
         $(this.ui.newEntryFormDisplay).collapse('show');

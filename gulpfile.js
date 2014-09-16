@@ -7,6 +7,7 @@ var gulp      = require('gulp'),
     notify    = require('gulp-notify'),
     minify    = require('gulp-minify-css'),
     sequence  = require('gulp-run-sequence');
+    declare   = require('gulp-declare');
 
 
 
@@ -23,7 +24,7 @@ var paths = {
       dest:         './dist/js/app/'
     },
     jade: {
-      dest:         './dist/'
+      dest:         './dist/js'
     }
 
 }
@@ -46,7 +47,7 @@ gulp.task('watch', ['server'], function() {
   gulp.watch('assets/scss/*.scss', ['compile-sass'], 'styles');
 
   gulp.watch('assets/js/app/modules/**/templates/*.jade', function() {
-    sequence('compile-html');
+    sequence('client-templates');
   })
 
 });
@@ -65,6 +66,15 @@ gulp.task('compile-html', function(e) {
   .pipe(jade())
   .pipe(notify( { message: 'compiling html'}))
   .pipe(gulp.dest(paths.jade.dest));
+});
+
+gulp.task('client-templates', function() {
+  return gulp.src(['assets/js/app/modules/**/templates/*.jade'])
+    .pipe(jade({ client: true }))
+    .pipe(declare({ namespace: 'templates' }))
+    .pipe(notify( { message: 'compiling html'}))
+    .pipe(concat('templates.js'))
+    .pipe(gulp.dest(paths.jade.dest));
 });
 
 

@@ -1,1 +1,39 @@
-p test
+.container
+  .navbar-header
+  
+    button.navbar-toggle.lines-button.x.visible-xs(type='button', data-toggle='collapse', data-target='.bs-navbar-collapse', role='button, aria-label="Toggle Navigation')
+      span.lines
+    a(href='../').navbar-brand HeelHook
+
+  nav.collapse.navbar-collapse.bs-navbar-collapse(role='navigation')
+    ul.nav.navbar-nav.navbar-right
+      li
+        a(href='#').js-add Add Entry
+
+.container
+  .navbar-new-entry.collapse
+    form(role='form').new-entry-form test
+      .row
+        .col-xs-12
+          input(type='text', name='title').form-control
+      .row
+        .col-xs-12
+          label 5.8
+          input(type='radio', name='difficulty', value='5.8')
+          label 5.9
+          input(type='radio', name='difficulty', value='5.9')
+          label 5.10
+          input(type='radio', name='difficulty', value='5.10')
+          label 5.11
+          input(type='radio', name='difficulty', value='5.11')
+      .row
+        .col-xs-12
+          label Clean
+          input(type='radio', name='success', value='clean')
+          label Success
+          input(type='radio', name='success', value='success')
+          label Fail
+          input(type='radio', name='success', value='fail')
+      .row
+        .col-xs-12
+          button.btn.btn-default.js-submit Submit
