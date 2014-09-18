@@ -25,7 +25,11 @@ var paths = {
     },
     jade: {
       dest:         './dist/js'
+    },
+    jadeIndex: {
+      dest:         './'
     }
+
 
 }
 
@@ -50,6 +54,17 @@ gulp.task('watch', ['server'], function() {
     sequence('client-templates');
   })
 
+  gulp.watch('index.jade', function() {
+    sequence('compile-index');
+  })
+
+});
+
+gulp.task('compile-index', function() {
+  gulp.src(['index.jade'])
+  .pipe(jade())
+  .pipe(notify( { message: 'compiling index'}))
+  .pipe(gulp.dest(paths.jadeIndex.dest));
 });
 
 
